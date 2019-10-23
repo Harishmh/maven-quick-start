@@ -9,5 +9,13 @@ node{
      sh label: '', script: 'mvn clean package'
         
     }
+  stage('Email Notification'){
+    
+     mail bcc: 'C.Harish@thomsonreuters.com', body: '''Build successful
+
+      Thanks!!
+      Harish
+      9553175531''', cc: 'c.harish', from: '', replyTo: '', subject: 'build successful', to: 'c.harish@hotmail.com'    
+    }
     
 }
